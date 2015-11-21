@@ -1,0 +1,48 @@
+<div id="listwoolmodal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title">Wool Entries</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Donator Name</th>
+              <th>Donator Phone Number</th>
+              <th>Donator Wool</th>
+              <th>Route to Address</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        <% @wools.each do |l| %>
+        <%= render 'listpart', :wools => l %>
+
+        <%end %>
+
+        </tbody>
+        </table>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</fieldset>
+
+</div>
+</div>

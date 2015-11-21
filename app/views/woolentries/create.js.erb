@@ -1,0 +1,35 @@
+
+
+
+
+
+<%if @savable %>
+var marker = Gmaps.store.handler.addMarker({
+  'lat': "<%=@mapinfo[0].latitude %>",
+  'lng': "<%=@mapinfo[0].longitude%>",
+  'json': "<%={ :id => @newwool.id }%>",
+  'picture': {
+    'url': 'https://static.maplewiki.net/6/6a/Red_Ball_of_Yarn.gif',
+    'width': 32,
+    'height': 32,
+    'title': "new test"
+  },
+  'infowindow': "<%=j render 'markertext', :p => @newwool %>"
+});
+
+
+console.log("test1");
+Gmaps.store.markers.push(marker);
+console.log('test3');
+marker.serviceObject.set('id', "<%=@newwool.id%>");
+marker.serviceObject.set('person', "<%=@newwool.person%>");
+Gmaps.store.handler.addMarker(marker);
+$('#addwoolmodal').modal('hide');
+<%else%>
+
+  $('.alert').remove();
+
+  $('#addwoolmodal').prepend("<p class='alert alert-danger'><%=@error%> </p>");
+
+
+<%end%>

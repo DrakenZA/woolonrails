@@ -1,0 +1,43 @@
+<div class="col-lg-6">
+  <%= form_tag({action: "create", method: "post", remote: true},{class: "form-horizontal" }) do %>
+
+  <fieldset>
+    <legend>New Wool</legend>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointname', '', size: 75, class: "form-control",placeholder: "name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Number</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'phonenum', '', size: 75, class: "form-control",placeholder: "011" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputlocation" class="col-lg-2 control-label">Location</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointwhere','', size: 75, class: "form-control", placeholder: "location" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Wool</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointwhat', '', size: 75, class: "form-control",placeholder: "wool" %>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= submit_tag "Send", 'data-disable-with' => 'Sending', class: 'btn btn-primary' %>
+
+      </div>
+    </div>
+  </fieldset>
+<%end%>
+</div>

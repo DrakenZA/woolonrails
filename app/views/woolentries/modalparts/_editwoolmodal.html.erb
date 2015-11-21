@@ -1,0 +1,65 @@
+<div id="editwoolmodal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title">Add new wool Location</h4>
+      </div>
+      <div class="modal-body">
+
+
+<%= form_tag woolentry_path(@cwool), :method => :put, :remote => :true, :class => "form-horizontal", :id => 'editform' do -%>
+
+<fieldset>
+  <legend>Legend</legend>
+  <div class="form-group">
+    <label for="inputName" class="col-lg-2 control-label">Name</label>
+    <div class="col-lg-10">
+      <%= text_field_tag 'pointname', @cwool.person, size: 75, class: "form-control",placeholder: "name" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputName" class="col-lg-2 control-label">Number</label>
+    <div class="col-lg-10">
+      <%= text_field_tag 'phonenum', @cwool.phonenum, size: 75, class: "form-control",placeholder: "011" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputlocation" class="col-lg-2 control-label">Location</label>
+    <div class="col-lg-10">
+      <%= text_field_tag 'pointwhere',"#{@cwool.lat} , #{@cwool.long}", size: 75, class: "form-control", placeholder: "location" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textArea" class="col-lg-2 control-label">Wool</label>
+    <div class="col-lg-10">
+      <%= text_field_tag 'pointwhat', @cwool.desc, size: 75, class: "form-control",placeholder: "wool" %>
+      <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= submit_tag "Update", 'data-disable-with' => 'Updating', class: 'btn btn-primary',:onclick => "$('#editform').submit();$('#buttonforedit').prop('disabled',true);$('#buttonforedit').prop('value','Updating');", :id => 'buttonforedit' %>
+  <!-- <%= submit_tag "Update", 'data-disable-with' => 'Updating', class: 'btn btn-primary' %> -->
+</div>
+</fieldset>
+
+<%end%>
+</div>
+</div>

@@ -1,0 +1,9 @@
+<ul><%= p.person %></ul>
+<ul><%= p.phonenum %></ul>
+
+
+<ul><%= p.desc %></ul>
+<ul><a href="https://www.google.co.za/maps/dir//<%=p.lat%>,<%=p.long%>/@<%=p.lat%>,<%=p.long%>,13z">click for Directions</a></ul>
+<ul><%= button_to 'edit' , edit_woolentry_path(p), :method => :get, :remote => true,:class => 'btn btn-primary' %></ul>
+
+<ul><%= button_to 'delete' , woolentry_path(p), :method => :delete, :remote => true,:class => 'btn btn-primary' %></ul>

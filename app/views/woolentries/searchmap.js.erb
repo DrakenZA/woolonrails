@@ -1,0 +1,5 @@
+console.log("<%=@search%>");
+
+markermoos = _.find(Gmaps.store.markers, function(obj) { return obj.serviceObject.person == "<%=@search%>" });
+Gmaps.store.handler.map.centerOn(markermoos);
+console.log("tes2t");

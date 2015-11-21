@@ -1,0 +1,3 @@
+$('#editwoolmodal').remove();
+$('#modalstorage').append("<%=j render :partial => 'woolentries/modalparts/editwoolmodal',:@cwool => @cwool %>");
+$('#editwoolmodal').modal('show');

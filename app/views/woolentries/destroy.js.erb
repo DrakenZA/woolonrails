@@ -1,0 +1,5 @@
+
+markermoo = _.find(Gmaps.store.markers, function(obj) { return obj.serviceObject.id == "<%=@deletewoolid%>" });
+Gmaps.store.handler.removeMarker(markermoo);
+var index = Gmaps.store.markers.indexOf(markermoo);
+Gmaps.store.markers.splice(index,1);

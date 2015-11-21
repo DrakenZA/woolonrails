@@ -1,0 +1,2 @@
+module MaingameHelper
+end

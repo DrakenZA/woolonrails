@@ -1,0 +1,12 @@
+
+if (!(<%=@savable%>)) {
+  $('.alert').remove();
+
+$('#editwoolmodal').prepend("<p class='alert alert-danger'><%=@error%> </p>");
+$('#buttonforedit').prop('disabled',false);
+$('#buttonforedit').prop('value','Update');
+ }
+else {
+$('#editwoolmodal').modal('hide');
+$('#editwoolmodal').remove();
+};

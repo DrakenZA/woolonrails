@@ -1,0 +1,45 @@
+<div class="col-lg-6">
+  <%= form_tag woolentry_path(@cwool), :method => :put do %>
+
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointname', @cwool.person, size: 75, class: "form-control",placeholder: "name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Number</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'phonenum', @cwool.phonenum, size: 75, class: "form-control",placeholder: "011" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputlocation" class="col-lg-2 control-label">Location</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointwhere',"#{@cwool.lat} , #{@cwool.long}", size: 75, class: "form-control", placeholder: "location" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Wool</label>
+      <div class="col-lg-10">
+        <%= text_field_tag 'pointwhat', @cwool.desc, size: 75, class: "form-control",placeholder: "wool" %>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= submit_tag "Send", 'data-disable-with' => 'Sending', class: 'btn btn-primary' %>
+
+      </div>
+    </div>
+  </fieldset>
+</form>
+<%end%>
+</div>
